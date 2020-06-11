@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>图</title>
+</head>
+<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+
+<body>
+<!-- 显示Echarts图表 -->
+<div style="height:410px;min-height:100px;margin:0 auto;" id="main"></div>
+
+<script type="text/javascript" th:inline="javascript">
+
+    var data1 = [[${data}]];
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: '第一个 ECharts 实例'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: data1.keyList
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'line',
+            data: data1.valueList
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>
