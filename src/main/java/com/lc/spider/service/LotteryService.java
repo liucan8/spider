@@ -3,7 +3,7 @@ package com.lc.spider.service;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.lc.spider.model.LotteryExcelModel;
+import com.lc.spider.model.dto.LotteryExcelModel;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

@@ -1,21 +1,17 @@
 package com.lc.spider.controller;
 
 import java.util.List;
-
 import javax.servlet.http.HttpServletResponse;
 
-import com.lc.spider.model.LotteryExcelModel;
+import com.lc.spider.model.ThreeD;
+import com.lc.spider.model.dto.LotteryExcelModel;
 import com.lc.spider.service.LotteryService;
-import com.lc.spider.service.SpiderService;
+import com.lc.spider.service.ThreeDService;
 import com.lc.spider.utils.excel.ExcelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author liucan
- * @date 2020/4/20 10:26
- */
 @RestController
 public class SpiderController {
     private static final String LOTTERY_URL = "https://kaijiang.500.com/shtml/dlt/20038.shtml";
@@ -26,6 +22,8 @@ public class SpiderController {
 
     @Autowired
     private LotteryService lotteryService;
+    @Autowired
+    private ThreeDService threeDService;
 
     @GetMapping("/lottery")
     public void lottery(HttpServletResponse response) {
@@ -34,4 +32,13 @@ public class SpiderController {
         ExcelUtil.exportData(response,"结果-sd",list,LotteryExcelModel.class);
     }
 
+    @GetMapping("/save/3D")
+    public void save3D() {
+        //切换路径执行
+        List<LotteryExcelModel> list =  lotteryService.analyzeLottery(SD_URL);
+
+        List<ThreeD> threeDS = ThreeD.fromList(list);
+
+        threeDService.saveBatch(threeDS);
+    }
 }

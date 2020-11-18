@@ -1,14 +1,9 @@
-package com.lc.spider;
+package com.lc.spider.model.dto;
 
 import java.math.BigDecimal;
 import java.util.Objects;
-
 import lombok.Data;
 
-/**
- * @author liucan
- * @date 2020/4/20 14:07
- */
 @Data
 public class LotteryThreeD {
     //期数

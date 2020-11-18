@@ -1,4 +1,4 @@
-package com.lc.spider.model;
+package com.lc.spider.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,8 +9,8 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class Student {
-    private Integer id;
+public class LottData {
+    private String period;
 
-    private String name;
+    private String number;
 }

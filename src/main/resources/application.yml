@@ -8,3 +8,14 @@ spring:
   mvc:
     view:
       prefix: /templates
+  datasource:
+    url: jdbc:mysql://8.131.86.223:3306/huoshan-1?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: root
+    password: Lc@123456
+
+#mybatis映射xml文件
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  typeAliasesPackage: com.lc.spider.model
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,4 +1,4 @@
-package com.lc.spider.model;
+package com.lc.spider.model.dto;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.AllArgsConstructor;
