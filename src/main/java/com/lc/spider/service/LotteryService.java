@@ -10,10 +10,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
-/**
- * @author liucan
- * @date 2020/5/27 10:59
- */
 @Service
 public class LotteryService {
 

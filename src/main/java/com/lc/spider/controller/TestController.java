@@ -24,10 +24,13 @@ public class TestController {
         threeDService.save(threeD);
     }
 
-
     @PostMapping("/split")
     public void splitNumber() {
         threeDService.splitNumber();
     }
 
+    @PostMapping("/syncLatest")
+    public void syncLatest() {
+        threeDService.syncLatestNumber();
+    }
 }
