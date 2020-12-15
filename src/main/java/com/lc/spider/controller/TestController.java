@@ -5,6 +5,7 @@ import java.util.Date;
 import com.lc.spider.model.ThreeD;
 import com.lc.spider.service.ThreeDService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,5 +33,13 @@ public class TestController {
     @PostMapping("/syncLatest")
     public void syncLatest() {
         threeDService.syncLatestNumber();
+    }
+
+    @Value("${testUrl}")
+    private String testUrl;
+
+    @PostMapping("/testValue")
+    public void testValue() {
+        System.out.println("==================testUrl:"+testUrl);
     }
 }

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: spider
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config-server
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://8.131.86.223:8761/eureka/
+  instance:
+    prefer-ip-address: true
